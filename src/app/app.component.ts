@@ -49,12 +49,10 @@ export class AppComponent {
     }
   }
   deleteItem(value:any){
-    console.log(value.target.id)
     this.todoArray.splice(value.target.id, 1)
   }
 
   todoSubmit(value:any){
-    console.log(value);
     if(value.todo !== ""){
       this.todoArray.push(value.todo);
     }
