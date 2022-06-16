@@ -1,0 +1,21 @@
+<div class="container">
+    <form #todoForm="ngForm" (ngSubmit)="todoSubmit(todoForm.value)">
+        <div class="form-group form-action">
+            <h1 class="text-center">Todo List</h1>
+            <div class="input-group-prepend input-cover">
+                <input type="text" name="todo" class="form-control" placeholder="Add a task" id="name" #todo ngModel>
+                <span class="input-group-text form-button" (click)="addTodo(todo.value)">
+                    <i class="material-icons">add</i>
+                </span>
+            </div>
+        </div>
+        <div class="data">  
+            <ul class="list-instyled">   
+                <li *ngFor="let todo of todoArray; let i= index" [@moveInLeft]>
+                    {{todo}}
+                    <i (click)="deleteItem($event)" id="{{i}}"  class="material-icons">delete</i>
+                </li>  
+            </ul> 
+        </div>
+    </form>
+</div>
